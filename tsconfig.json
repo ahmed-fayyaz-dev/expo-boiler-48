@@ -1,0 +1,12 @@
+{
+  // Config For Autocomplete of Absolute Imports
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "src": ["./src/*"],
+      "assets": ["./assets/*"]
+    }
+  },
+
+  "extends": "expo/tsconfig.base"
+}

@@ -1,0 +1,85 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "airbnb",
+    "airbnb/hooks",
+    "prettier",
+    "prettier/react",
+    "plugin:import/recommended",
+    "plugin:import/typescript"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "typescript": true,
+      "node": true,
+      "babel-module": {
+        "allowExistingDirectories": true
+      }
+    },
+    "import/extensions": [".js", ".jsx", ".json", ".ts", ".tsx"]
+  },
+  "plugins": ["react", "@typescript-eslint", "module-resolver", "import"],
+  "rules": {
+    // allow .js files to contain JSX code
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+
+    // prevent eslint to complain about the "styles" variable being used before it was defined
+    "no-use-before-define": ["error", { "variables": false }],
+
+    // Module Import Rules (Absolute)
+    "module-resolver/use-alias": 2,
+
+    // ignore errors for the react-navigation package
+    //   "react/prop-types": ["error", {"ignore": ["navigation", "navigation.navigate"]}]
+
+    // Import Rules
+    "import/default": "error",
+    "import/export": "error",
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "parent", "sibling", "index"],
+        "alphabetize": {
+          "order": "asc"
+        },
+        "pathGroups": [
+          {
+            "pattern": "assets/**",
+            "group": "parent",
+            "position": "before"
+          },
+          {
+            "pattern": "src/**",
+            "group": "parent",
+            "position": "before"
+          },
+          {
+            "pattern": "react-native",
+            "group": "builtin",
+            "position": "before"
+          },
+          {
+            "pattern": "react",
+            "group": "builtin",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react-native", "react"]
+      }
+    ]
+  }
+}
