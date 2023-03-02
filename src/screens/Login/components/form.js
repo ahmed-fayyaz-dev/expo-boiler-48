@@ -1,26 +1,22 @@
 import React from 'react';
 import { Formik } from 'formik';
-import { loginValidationSchema } from '../helpers/validationSchema';
-import CustomInput from '../../../components/Input';
+import CustomInput from 'src/components/Input';
+import { loginValidationSchema } from 'src/screens/Login/helpers/validationSchema';
 
-const Form = ({
+function Form({
   initialValues = {
     employeeId: '',
     password: '',
     remember: null,
   },
-}) => {
+}) {
   return (
     <Formik initialValues={initialValues} validationSchema={loginValidationSchema}>
-      {() => {
-        return (
-          <>
-            <CustomInput />
-          </>
-        );
-      }}
+      {() => (
+        <CustomInput />
+      )}
     </Formik>
   );
-};
+}
 
 export default Form;
