@@ -41,42 +41,46 @@
     // ignore errors for the react-navigation package
     "react/prop-types": ["error", { "ignore": ["navigation", "navigation.navigate"] }],
 
-    "import/extensions": "off"
+    // ignoring import extensions check ( src/index.js/tsx/etc)
+    "import/extensions": "off",
+
+    // windows and mac endline rule crlf/lf
+    "linebreak-style": 0,
 
     // Import Rules
-    // "import/default": "error",
-    // "import/export": "error",
-    // "import/order": [
-    //   "error",
-    //   {
-    //     "groups": ["builtin", "external", "parent", "sibling", "internal"],
-    //     "alphabetize": {
-    //       "order": "asc"
-    //     },
-    //     "pathGroups": [
-    //       {
-    //         "pattern": "assets/**",
-    //         "group": "parent",
-    //         "position": "before"
-    //       },
-    //       {
-    //         "pattern": "src/**",
-    //         "group": "parent",
-    //         "position": "before"
-    //       },
-    //       {
-    //         "pattern": "react",
-    //         "group": "builtin",
-    //         "position": "before"
-    //       },
-    //       {
-    //         "pattern": "react-native",
-    //         "group": "builtin",
-    //         "position": "before"
-    //       }
-    //     ],
-    //     "pathGroupsExcludedImportTypes": ["react-native", "react"]
-    //   }
-    // ]
+    "import/default": "error",
+    "import/export": "error",
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "parent", "sibling", "internal"],
+        "alphabetize": {
+          "order": "asc"
+        },
+        "pathGroups": [
+          {
+            "pattern": "assets/**",
+            "group": "parent",
+            "position": "before"
+          },
+          {
+            "pattern": "src/**",
+            "group": "parent",
+            "position": "before"
+          },
+          {
+            "pattern": "react",
+            "group": "builtin",
+            "position": "before"
+          },
+          {
+            "pattern": "react-native",
+            "group": "builtin",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react-native", "react"]
+      }
+    ]
   }
 }
